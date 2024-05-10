@@ -1,0 +1,111 @@
+:root {
+  --primary-color: #007bff;
+  --hover-color: #0056b3;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+#note-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#note-title,
+#note-body,
+button {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#note-title,
+#note-body {
+  font-size: 16px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+button:focus,
+#note-title:focus,
+#note-body:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+#notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.note {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note h2 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.note p {
+  line-height: 1.5;
+}
+
+.note-date {
+  font-size: 14px;
+  color: #666;
+}
+
+button {
+  transition: background-color 0.3s ease;
+}
+
+.note {
+  transition: transform 0.2s ease;
+}
+
+.note:hover {
+  transform: translateY(-5px);
+}
+
+#loading-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+}
+
+@media (max-width: 600px) {
+  #notes-list {
+    grid-template-columns: 1fr;
+  }
+}
